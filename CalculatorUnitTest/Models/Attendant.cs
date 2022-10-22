@@ -31,7 +31,7 @@ namespace HospitalUnitTest.Models
             return Id;
         }
 
-        public static bool RegisterUserToConsultation(List<Attendant> attendants, Attendant attendant)
+        public static bool VerifyIfAttendantExist(List<Attendant> attendants, Attendant attendant)
         {
             return attendants.Contains(attendant) ? true : throw new AttendantDoesNotExistException($"Não existe atendente com a matrícula {attendant.GetId()}");
         }

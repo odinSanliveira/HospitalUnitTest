@@ -52,7 +52,7 @@ namespace HospitalUnitTest.Tests
 
             attendants.Add(attendant1);
             //act
-            bool result = Attendant.RegisterUserToConsultation(attendants, attendant1);
+            bool result = Attendant.VerifyIfAttendantExist(attendants, attendant1);
 
             //assert
             Assert.True(result);
@@ -68,7 +68,7 @@ namespace HospitalUnitTest.Tests
 
             attendants.Add(attendant1);
             //act
-            var actual = Assert.Throws<AttendantDoesNotExistException>(() => Attendant.RegisterUserToConsultation(attendants, attendant2));
+            var actual = Assert.Throws<AttendantDoesNotExistException>(() => Attendant.VerifyIfAttendantExist(attendants, attendant2));
             //assert
             Assert.Equal("Não existe atendente com a matrícula 258964", actual.Message);
 
