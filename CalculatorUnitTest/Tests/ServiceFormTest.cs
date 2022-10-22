@@ -29,6 +29,5 @@ namespace HospitalUnitTest.Tests
 
             Assert.Contains(patients[0].GetName(), patient1.GetName());
         }
-        
     }
 }

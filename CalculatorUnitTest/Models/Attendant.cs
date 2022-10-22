@@ -33,7 +33,7 @@ namespace HospitalUnitTest.Models
 
         public static bool RegisterUserToConsultation(List<Attendant> attendants, Attendant attendant)
         {
-            return attendants.Contains(attendant);
+            return attendants.Contains(attendant) ? true : throw new AttendantDoesNotExistException($"Não existe atendente com a matrícula {attendant.GetId()}");
         }
     }
 }

@@ -37,10 +37,10 @@ namespace HospitalUnitTest.Tests
             attendant.Id = "";
 
             //act
-            var ex = Assert.Throws<WrongOrUnexistentAttendantIdException>(() => attendant.GetId());          
+            var actual = Assert.Throws<WrongOrUnexistentAttendantIdException>(() => attendant.GetId());          
 
             //assert
-            Assert.Equal("Usuário Jojo não existe ou não tem ID", ex.Message);
+            Assert.Equal("Usuário Jojo não existe ou não tem ID", actual.Message);
         }
 
         [Fact]
@@ -56,6 +56,22 @@ namespace HospitalUnitTest.Tests
 
             //assert
             Assert.True(result);
+        }
+
+        [Fact]
+        public void AttendantDoesNotExistInTheList()
+        {
+            //arrange
+            attendants = new List<Attendant>();
+            attendant1 = new Attendant("Izabel", "123.456.789-00", 21, "445477");
+            attendant2 = new Attendant("Gabriel", "123.945.225-00", 21, "258964");
+
+            attendants.Add(attendant1);
+            //act
+            var actual = Assert.Throws<AttendantDoesNotExistException>(() => Attendant.RegisterUserToConsultation(attendants, attendant2));
+            //assert
+            Assert.Equal("Não existe atendente com a matrícula 258964", actual.Message);
+
         }
     }
 }
