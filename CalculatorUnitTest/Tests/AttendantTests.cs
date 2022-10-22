@@ -3,11 +3,11 @@
     Para disciplina de Teste de Software - IFPE - 2022.2
  */
 
-using CalculatorUnitTest.Exceptions;
-using CalculatorUnitTest.Models;
+using HospitalUnitTest.Exceptions;
+using HospitalUnitTest.Models;
 using Xunit;
 
-namespace CalculatorUnitTest
+namespace HospitalUnitTest.Tests
 {
     public class AttendantTests
     {
@@ -37,5 +37,8 @@ namespace CalculatorUnitTest
             //assert
             Assert.Equal("Usuário Jojo não existe ou não tem ID", ex.Message);
         }
+
+        [Fact]
+        public void 
     }
 }

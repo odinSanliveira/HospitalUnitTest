@@ -6,7 +6,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace CalculatorUnitTest.Exceptions
+namespace HospitalUnitTest.Exceptions
 {
     [Serializable]
     class WrongOrUnexistentAttendantIdException : Exception

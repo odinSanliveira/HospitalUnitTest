@@ -3,12 +3,13 @@
     Para disciplina de Teste de Software - IFPE - 2022.2
  */
 
-using CalculatorUnitTest.Models;
+using HospitalUnitTest.Enums;
+using HospitalUnitTest.Models;
 
-namespace CalculatorUnitTest.Interfaces
+namespace HospitalUnitTest.Interfaces
 {
     public interface IFicha
     {
-        void Save(Patient patient, Models.Attendant attendant);
+        void SaveForm(Patient patient, Illnesses illnesses);
     }
 }

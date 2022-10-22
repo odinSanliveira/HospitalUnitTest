@@ -3,13 +3,13 @@
     Para disciplina de Teste de Software - IFPE - 2022.2
  */
 
-namespace CalculatorUnitTest.Enums
+namespace HospitalUnitTest.Enums
 {
     public enum Illnesses
     {
         DENGUE,
         CATAPORA,
         FRATURA,
-        NONE
+        UNKNOWN
     }
 }

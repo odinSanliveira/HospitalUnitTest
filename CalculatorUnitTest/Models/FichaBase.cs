@@ -3,9 +3,10 @@
     Para disciplina de Teste de Software - IFPE - 2022.2
  */
 
-using CalculatorUnitTest.Interfaces;
+using HospitalUnitTest.Enums;
+using HospitalUnitTest.Interfaces;
 
-namespace CalculatorUnitTest.Models
+namespace HospitalUnitTest.Models
 {
     public class FichaBase : IFicha
     {
@@ -16,6 +17,11 @@ namespace CalculatorUnitTest.Models
         {
             Patient = patient;
             Attendant = attendant;
+        }
+
+        public virtual void SaveForm(Patient patient, Illnesses illnesses)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

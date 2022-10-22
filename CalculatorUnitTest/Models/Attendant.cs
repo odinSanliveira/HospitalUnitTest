@@ -3,10 +3,10 @@
     Para disciplina de Teste de Software - IFPE - 2022.2
  */
 
-using CalculatorUnitTest.Exceptions;
+using HospitalUnitTest.Exceptions;
 using System;
 
-namespace CalculatorUnitTest.Models
+namespace HospitalUnitTest.Models
 {
     public class Attendant : Person
     {

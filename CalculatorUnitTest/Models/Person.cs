@@ -3,7 +3,7 @@
     Para disciplina de Teste de Software - IFPE - 2022.2
  */
 
-namespace CalculatorUnitTest.Models
+namespace HospitalUnitTest.Models
 {
     public abstract class Person
     {
