@@ -1,3 +1,8 @@
+/**
+    Este código foi desenvolvido por: Gabriel Santana, Izabel Mendes, Odin Oliveira
+    Para disciplina de Teste de Software - IFPE - 2022.2
+ */
+
 using CalculatorUnitTest.Exceptions;
 using CalculatorUnitTest.Models;
 using Xunit;
@@ -24,10 +29,10 @@ namespace CalculatorUnitTest
             //arrange
             Attendant attendant = new Attendant();
             attendant.SetName("Jojo");
-            //attendant.Id = "";
+            attendant.Id = "";
+
             //act
-            var ex = Assert.Throws<WrongOrUnexistentAttendantIdException>(() => attendant.GetId());
-            //WrongOrUnexistentAttendantIdException exception = Assert.Throws<WrongOrUnexistentAttendantIdException>(() => attendant.GetId());
+            var ex = Assert.Throws<WrongOrUnexistentAttendantIdException>(() => attendant.GetId());          
 
             //assert
             Assert.Equal("Usuário Jojo não existe ou não tem ID", ex.Message);

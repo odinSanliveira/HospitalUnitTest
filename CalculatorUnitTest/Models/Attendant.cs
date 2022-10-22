@@ -1,9 +1,10 @@
-﻿using CalculatorUnitTest.Exceptions;
+﻿/**
+    Este código foi desenvolvido por: Gabriel Santana, Izabel Mendes, Odin Oliveira
+    Para disciplina de Teste de Software - IFPE - 2022.2
+ */
+
+using CalculatorUnitTest.Exceptions;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CalculatorUnitTest.Models
 {
