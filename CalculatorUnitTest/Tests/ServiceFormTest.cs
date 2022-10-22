@@ -16,6 +16,8 @@ namespace HospitalUnitTest.Tests
         Patient patient1;
         Patient patient2;
 
+        
+
         [Fact]
         public void AddPatientFormToSystem()
         {
@@ -27,5 +29,6 @@ namespace HospitalUnitTest.Tests
 
             Assert.Contains(patients[0].GetName(), patient1.GetName());
         }
+        
     }
 }

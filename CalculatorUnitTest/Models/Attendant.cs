@@ -5,6 +5,7 @@
 
 using HospitalUnitTest.Exceptions;
 using System;
+using System.Collections.Generic;
 
 namespace HospitalUnitTest.Models
 {
@@ -28,6 +29,11 @@ namespace HospitalUnitTest.Models
                 throw new WrongOrUnexistentAttendantIdException($"Usuário {this.GetName()} não existe ou não tem ID");
             }
             return Id;
+        }
+
+        public static bool RegisterUserToConsultation(List<Attendant> attendants, Attendant attendant)
+        {
+            return attendants.Contains(attendant);
         }
     }
 }

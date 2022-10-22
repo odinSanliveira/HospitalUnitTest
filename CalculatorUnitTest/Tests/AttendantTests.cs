@@ -5,12 +5,17 @@
 
 using HospitalUnitTest.Exceptions;
 using HospitalUnitTest.Models;
+using System.Collections.Generic;
 using Xunit;
 
 namespace HospitalUnitTest.Tests
 {
     public class AttendantTests
     {
+        List<Attendant> attendants;
+        Attendant attendant1;
+        Attendant attendant2;
+
         [Fact]
         public void CreateAttendantUser()
         {
@@ -39,6 +44,18 @@ namespace HospitalUnitTest.Tests
         }
 
         [Fact]
-        public void 
+        public void AttendantExistInTheList()
+        {
+            //arrange
+            attendants = new List<Attendant>();
+            attendant1 = new Attendant("Izabel", "123.456.789-00", 21, "445477");
+
+            attendants.Add(attendant1);
+            //act
+            bool result = Attendant.RegisterUserToConsultation(attendants, attendant1);
+
+            //assert
+            Assert.True(result);
+        }
     }
 }
