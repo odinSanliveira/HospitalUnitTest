@@ -23,5 +23,7 @@ namespace HospitalUnitTest.Models
         {
             Illnesses = illnesses;
         }
+
+        
     }
 }

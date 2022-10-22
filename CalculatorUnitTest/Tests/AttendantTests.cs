@@ -71,7 +71,6 @@ namespace HospitalUnitTest.Tests
             var actual = Assert.Throws<AttendantDoesNotExistException>(() => Attendant.VerifyIfAttendantExist(attendants, attendant2));
             //assert
             Assert.Equal("Não existe atendente com a matrícula 258964", actual.Message);
-
         }
     }
 }

@@ -5,15 +5,20 @@ Para disciplina de Teste de Software - IFPE - 2022.2
 
 using HospitalUnitTest.Models;
 using HospitalUnitTest.Enums;
+using System.Collections.Generic;
+using System;
+using HospitalUnitTest.Exceptions;
+using HospitalUnitTest.Tests;
 
 namespace HospitalUnitTest.Models
 {
     public class ServiceForm : FichaBase
     {
-        public Patient patient { get; set; }
-        public Attendant attendant { get; set; }
-        public Priority priorityColor { get; set; }
-        public Doctor doctor { get; set; }
+
+        public Patient Patient { get; set; }
+        public Attendant Attendant { get; set; }
+        public Priority PriorityColor { get; set; }
+        public Doctor Doctor { get; set; }
 
 
         public ServiceForm()
@@ -22,10 +27,30 @@ namespace HospitalUnitTest.Models
 
         public ServiceForm(Patient patient, Attendant attendant, Priority priorityColor, Doctor doctor)
         {
-            this.patient = patient;
-            this.attendant = attendant;
-            this.priorityColor = priorityColor;
-            this.doctor = doctor;
+            Patient = patient;
+            Attendant = attendant;
+            PriorityColor = priorityColor;
+            Doctor = doctor;
+        }
+
+        public ServiceForm(Patient patient)
+        {
+            Patient = patient;
+        }
+
+        public static bool VerifyIfPatientExist(List<Patient> patients, Patient patient)
+        {
+            return patients.Contains(patient) ? true : throw new PatientDoesNotExistException($"Não foi encontrado nenhum registro com o paciente {patient.GetCpf()}");
+        }
+
+        internal static void SaveForm(List<ServiceForm> services, ServiceForm serviceForm)
+        {
+            services.Add(serviceForm);
+        }
+
+        public static bool VerifyIfFormExistInList(List<ServiceForm> services, ServiceForm serviceForm)
+        {
+            return services.Contains(serviceForm);
         }
     }
 }

@@ -22,7 +22,7 @@ namespace HospitalUnitTest.Models
             Id = id;
         }
 
-        internal object GetId()
+        public object GetId()
         {
             if (String.IsNullOrEmpty(Id))
             {
