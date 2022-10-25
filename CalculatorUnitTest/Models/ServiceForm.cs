@@ -52,5 +52,19 @@ namespace HospitalUnitTest.Models
         {
             return services.Contains(serviceForm);
         }
+
+        internal List<ServiceForm> GetSpecificIlness(List<ServiceForm> services, Illnesses illness)
+        {
+            List<ServiceForm> result = new List<ServiceForm>();
+             
+            foreach(ServiceForm service in services)
+            {
+                if(service.Patient.Illnesses == illness)
+                {
+                    result.Add(service);
+                }
+            }
+            return result;
+        }
     }
 }
